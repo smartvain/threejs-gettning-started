@@ -19,6 +19,17 @@ export default class BlasterScene extends THREE.Scene
     this.add(light)
   }
 
+  private async createTarget(mtl: MTLLoader.MaterialCreator)
+  {
+    this.objLoader.setMaterials(mtl)
+
+    const modelRoot = await this.objLoader.loadAsync('assets/targetA.obj')
+
+    modelRoot.rotateY(Math.PI * 0.5)
+
+    return modelRoot
+  }
+
   update()
   {
     // update
