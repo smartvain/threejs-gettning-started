@@ -18,4 +18,9 @@ export default class BlasterScene extends THREE.Scene
 
     this.add(light)
   }
+
+  update()
+  {
+    // update
+  }
 }
